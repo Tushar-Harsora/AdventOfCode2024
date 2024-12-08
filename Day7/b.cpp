@@ -49,7 +49,15 @@ bool helper(vector<ll> ops, vector<int>& operators, const ll target_sum, ll ind 
 void solve() {
     ll ans = 0;
     string tmp;
+    vector<string> input;
     while(getline(cin, tmp)) {
+        input.push_back(tmp);
+    }
+
+    #pragma omp parallel for reduction(+:ans)
+    // #pragma omp parallel for
+    for(int i = 0; i < input.size(); i++) {
+        const string& tmp = input[i];
         string s_nums = tmp.substr(tmp.find(' '));
         ll target, num; sscanf(tmp.c_str(), "%lld", &target);
         vector<ll> ops;
