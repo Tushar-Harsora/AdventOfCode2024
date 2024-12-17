@@ -18,7 +18,9 @@ cd $latest_day_folder || { echo "Directory 'Day1' not found!"; exit 1; }
 source_file="${arg}.cpp"
 output_binary="${arg}"
 
-clang++ -std=c++20 -g -Xpreprocessor -fopenmp "$source_file" -o "$output_binary" -lomp $(echo ${LDFLAGS})
+export LDFLAGS="-L/usr/local/opt/libomp/lib"
+export CPPFLAGS="-I/usr/local/opt/libomp/include"
+clang++ -std=c++20 -fsanitize=undefined -g -Wall -Xpreprocessor -fopenmp "$source_file" -o "$output_binary" -lomp $(echo ${LDFLAGS})
 
 if [ $? -eq 0 ]; then
     echo "Compiled"
