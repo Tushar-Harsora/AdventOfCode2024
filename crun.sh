@@ -21,6 +21,7 @@ output_binary="${arg}"
 export LDFLAGS="-L/usr/local/opt/libomp/lib"
 export CPPFLAGS="-I/usr/local/opt/libomp/include"
 clang++ -std=c++20 -fsanitize=undefined -g -Wall -Xpreprocessor -fopenmp "$source_file" -o "$output_binary" -lomp $(echo ${LDFLAGS})
+# clang++ -std=c++20 -fsanitize=undefined -O2 -march=native -Wall -Xpreprocessor -fopenmp "$source_file" -o "$output_binary" -lomp $(echo ${LDFLAGS})
 
 if [ $? -eq 0 ]; then
     echo "Compiled"
