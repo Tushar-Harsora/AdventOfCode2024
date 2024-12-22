@@ -1,0 +1,12 @@
+           <   A > A   v <<   AA >  ^ AA > A       v  AA ^ A   < v  AAA >  ^ A
+Correct:<v<A>>^AvA^A <vA<AA>>^AAvA<^A>AAvA^A     <vA>^AA<A>A<v<A>A>^AAAvA<^A>A
+Incorre:v<<A>>^AvA^A v<<A>>^AAv<A<A>>^AAvAA<^A>A v<A>^AA<A>Av<A<A>>^AAAvA<^A>A
+           <   A > A    <   AA  v <   AA >>  ^ A   v
+
+          ^ A    <<  ^^ A  >> A  vvv  A
+Correct: <A>A v<<AA>^AA>A vAA^A<vAAA>^A
+Incorec: <A>A <AAv<AA>>^A vAA^Av<AAA>^A
+            A  ^^  <<   A
+          3    7  9   A
+correct: ^A<<^^A>>AvvvA
+incorre: ^A^^<<A>>AvvvA
